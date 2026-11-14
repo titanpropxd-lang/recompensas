@@ -9,7 +9,11 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
@@ -39,4 +43,25 @@ public class CosmeticListener implements Listener {
 
     @EventHandler
     public void onWorld(PlayerChangedWorldEvent e) { plugin.cosmetics().refreshActive(e.getPlayer()); }
+
+    /** Clic derecho con una hoja de cosmetico: se consume UNA y se desbloquea (si ya lo tiene, no se gasta). */
+    @EventHandler
+    public void onVoucher(PlayerInteractEvent e) {
+        if (e.getHand() != EquipmentSlot.HAND || (e.getAction() != Action.RIGHT_CLICK_AIR && e.getAction() != Action.RIGHT_CLICK_BLOCK)) return;
+        Player p = e.getPlayer();
+        ItemStack hand = p.getInventory().getItemInMainHand();
+        String id = plugin.cosmetics().voucherOf(hand);
+        if (id == null) return;
+        e.setCancelled(true);
+        var def = plugin.cosmetics().get(id);
+        var d = plugin.data().get(p);
+        if (def == null || d == null) { p.sendMessage(com.aetheria.rewards.util.Util.c(com.aetheria.rewards.util.Util.PREFIX + "§cEsta hoja ya no es válida.")); return; }
+        if (d.unlocked.contains(id)) { p.sendMessage(com.aetheria.rewards.util.Util.c(com.aetheria.rewards.util.Util.PREFIX + "§7Ya tienes " + def.rarity.color + def.name + "§7. La hoja no se gastó.")); return; }
+        if (hand.getAmount() <= 1) p.getInventory().setItemInMainHand(null); else hand.setAmount(hand.getAmount() - 1);   // se consume primero
+        d.unlocked.add(id);
+        plugin.data().markDirty(d);
+        p.playSound(p.getLocation(), org.bukkit.Sound.UI_TOAST_CHALLENGE_COMPLETE, 1f, 1.2f);
+        p.spawnParticle(org.bukkit.Particle.TOTEM_OF_UNDYING, p.getLocation().add(0, 1, 0), 30, 0.4, 0.6, 0.4, 0.2);
+        p.sendMessage(com.aetheria.rewards.util.Util.c(com.aetheria.rewards.util.Util.PREFIX + "¡Desbloqueaste " + def.rarity.color + def.name + "§7! Equípalo en §e/cosmeticos§7."));
+    }
 }

@@ -54,7 +54,7 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
         }
         switch (a[0].toLowerCase()) {
             case "help" -> {
-                for (String l : new String[]{"menu", "givekey <jugador> <crate> [n]", "givecoin <jugador> <n>", "unlock <jugador> <cosmético|all>",
+                for (String l : new String[]{"menu", "givekey <jugador> <crate> [n]", "givecosmetic <jugador> <id> [n]", "givecoin <jugador> <n>", "unlock <jugador> <cosmético|all>",
                     "lock <jugador> <cosmético>", "xp <jugador> <n>", "victory <jugador>", "place <crate>", "hidden <crate>", "remove <id>", "rotate <id> <yaw>",
                     "list", "reset <jugador> <advent|pase|misiones|febrero>", "reload"}) s.sendMessage(Util.c("§6/aeadmin §f" + l));
             }
@@ -68,6 +68,13 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
                 if (plugin.crates().get(a[2]) == null) { msg(s, "§cCrate inexistente."); return true; }
                 int n = a.length > 3 ? parse(a[3], 1) : 1;
                 plugin.rewards().give(t, Reward.key(a[2], n)); msg(s, "Entregadas " + n + " llaves a " + t.getName());
+            }
+            case "givecosmetic" -> {
+                Player t = target(s, a, 1); if (t == null || a.length < 3) return true;
+                CosmeticDef def = plugin.cosmetics().get(a[2]);
+                if (def == null) { msg(s, "§cCosmético inexistente."); return true; }
+                plugin.rewards().giveItem(t, plugin.cosmetics().voucher(def, a.length > 3 ? parse(a[3], 1) : 1));
+                msg(s, "Hoja de §f" + def.name + " §7entregada a " + t.getName());
             }
             case "givecoin" -> {
                 Player t = target(s, a, 1); if (t == null || a.length < 3) return true;
@@ -133,16 +140,17 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
         if (c.getName().equalsIgnoreCase("cosmeticos") && a.length == 1) out.add("probar");
         if (c.getName().equalsIgnoreCase("cosmeticos") && a.length == 2) plugin.cosmetics().all().forEach(d -> out.add(d.id));
         if (!c.getName().equalsIgnoreCase("aeadmin") || !s.hasPermission("rewards.admin")) return filter(out, a);
-        if (a.length == 1) out.addAll(List.of("menu", "help", "givekey", "givecoin", "unlock", "lock", "xp", "victory", "place", "hidden", "remove", "rotate", "list", "reset", "reload"));
+        if (a.length == 1) out.addAll(List.of("menu", "help", "givekey", "givecosmetic", "givecoin", "unlock", "lock", "xp", "victory", "place", "hidden", "remove", "rotate", "list", "reset", "reload"));
         else if (a.length == 2) {
             switch (a[0].toLowerCase()) {
-                case "givekey", "givecoin", "unlock", "lock", "xp", "victory", "reset" -> Bukkit.getOnlinePlayers().forEach(p -> out.add(p.getName()));
+                case "givekey", "givecosmetic", "givecoin", "unlock", "lock", "xp", "victory", "reset" -> Bukkit.getOnlinePlayers().forEach(p -> out.add(p.getName()));
                 case "place", "hidden" -> plugin.crates().all().forEach(x -> out.add(x.id));
                 case "remove", "rotate" -> plugin.crates().placements().forEach(x -> out.add(x.id));
             }
         } else if (a.length == 3) {
             switch (a[0].toLowerCase()) {
                 case "givekey" -> plugin.crates().all().forEach(x -> out.add(x.id));
+                case "givecosmetic" -> plugin.cosmetics().all().forEach(d -> out.add(d.id));
                 case "unlock", "lock" -> { out.add("all"); plugin.cosmetics().all().forEach(d -> out.add(d.id)); }
                 case "reset" -> out.addAll(List.of("advent", "pase", "misiones", "febrero"));
             }

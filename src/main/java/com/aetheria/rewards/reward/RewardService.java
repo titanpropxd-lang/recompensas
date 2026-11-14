@@ -42,15 +42,9 @@ public class RewardService {
     private void giveCosmetic(Player p, PlayerData d, String id) {
         CosmeticDef def = plugin.cosmetics().get(id);
         if (def == null) throw new IllegalStateException("cosmetico inexistente " + id);
-        if (d.unlocked.contains(id)) {
-            int comp = plugin.getConfig().getInt("duplicate-compensation." + def.rarity.name(), 25);
-            p.sendMessage(Util.c(Util.PREFIX + "Ya tenías " + def.rarity.color + def.name + "§7. Compensación: §6" + comp + " Coronas§7."));
-            Currency.give(plugin, p, comp);
-            return;
-        }
-        plugin.cosmetics().unlock(p, def);
-        p.sendMessage(Util.c(Util.PREFIX + "¡Cosmético desbloqueado: " + def.rarity.color + def.name + "§7!"));
-        p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 0.8f, 1.2f);
+        giveItem(p, plugin.cosmetics().voucher(def, 1));
+        p.sendMessage(Util.c(Util.PREFIX + "Recibiste la hoja de " + def.rarity.color + def.name + "§7. §eClic derecho§7 sobre ella para desbloquearlo."));
+        p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1f, 1.3f);
     }
 
     public void giveItem(Player p, ItemStack it) {

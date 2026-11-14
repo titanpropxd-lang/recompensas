@@ -34,6 +34,10 @@ public class CrateManager {
         this.placementTag = new NamespacedKey(plugin, "placement");
         loadCrates();
         loadPlacements();
+        // los modelos colocados necesitan espectadores: se actualizan cada segundo (solo cofres, no jugadores)
+        Bukkit.getScheduler().runTaskTimer(plugin, () -> {
+            for (Placement p : placements.values()) if (p.handle != null && !p.handle.isClosed()) p.handle.refreshViewers(48);
+        }, 60L, 20L);
     }
 
     public KeyManager keys() { return keys; }

@@ -7,6 +7,8 @@ public interface ModelHandle {
     enum Mode { LOOP, ONCE, HOLD }
     void move(Location loc);
     void animate(String animation, Mode mode);
+    /** Muestra el modelo a los jugadores cercanos y lo oculta a los lejanos (DummyTracker no tiene espectadores automaticos). */
+    void refreshViewers(double radius);
     void close();
     boolean isClosed();
 }

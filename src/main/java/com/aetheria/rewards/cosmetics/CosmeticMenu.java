@@ -43,9 +43,7 @@ public class CosmeticMenu extends Menu {
         for (CosmeticDef def : plugin.cosmetics().all()) {
             if (!def.published && !player.hasPermission("rewards.admin")) continue;
             if (favorites ? (d == null || !d.favorites.contains(def.id)) : def.category != cat) continue;
-            boolean own = d != null && plugin.cosmetics().owned(d, def);
-            if (filter == 1 && !own) continue;
-            if (filter == 2 && own) continue;
+            if (d == null || !plugin.cosmetics().owned(d, def)) continue;
             if (!search.isEmpty() && !def.name.toLowerCase().contains(search.toLowerCase())) continue;
             list.add(def);
         }
@@ -58,13 +56,12 @@ public class CosmeticMenu extends Menu {
             CosmeticDef def = list.get(idx);
             set(SLOTS[i], plugin.cosmetics().icon(def, d), e -> click(def, e.getClick()));
         }
-        if (list.isEmpty()) set(22, Util.item(Material.COBWEB, "§7Nada por aquí...", "§8Prueba otro filtro o categoría."));
+        if (list.isEmpty()) set(22, Util.item(Material.COBWEB, "§7No tienes cosméticos aquí", "§8Consigue hojas de cosmético y haz clic derecho", "§8sobre ellas para desbloquearlos."));
 
         // barra inferior
         if (page > 0) set(45, ui(9003, Material.ARROW, "§e« Página anterior"), e -> { page--; refresh(); });
         else back(45, () -> new MainMenuProxy(plugin).open(player));
-        set(47, ui(9006, Material.HOPPER, "§bFiltro: §f" + new String[]{"Todos", "Desbloqueados", "Bloqueados"}[filter], "§7Clic para cambiar"),
-                e -> { filter = (filter + 1) % 3; page = 0; refresh(); });
+        set(47, ui(9006, Material.HOPPER, "§7Solo ves lo que posees", "§8Consigue más con hojas de cosmético", "§8(cofres, pase, adviento y eventos)."), null);
         set(48, ui(9005, Material.COMPASS, "§bBuscar: §f" + (search.isEmpty() ? "—" : search), "§7Clic: buscar por nombre", "§7Clic derecho: limpiar"), e -> {
             if (e.getClick() == ClickType.RIGHT) { search = ""; refresh(); }
             else plugin.gui().prompt(player, "Escribe parte del nombre del cosmético:", t -> { search = t; page = 0; open(); });

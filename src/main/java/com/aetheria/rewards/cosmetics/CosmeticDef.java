@@ -38,7 +38,7 @@ public class CosmeticDef {
         try { d.category = Category.valueOf(s.getString("categoria", "OTROS")); } catch (Exception e) { d.category = Category.OTROS; }
         d.slot = s.getString("slot", "AURA").toUpperCase();
         d.rarity = Rarity.parse(s.getString("rareza"), Rarity.COMMON);
-        d.premium = "PREMIUM".equalsIgnoreCase(s.getString("tier", "PREMIUM"));
+        d.premium = true;   // ningun cosmetico es gratis: solo se usan los que el jugador posee
         d.model = s.getString("model");
         d.color = s.getString("color", "#b070ff");
         d.follow = s.getString("sigue", "head");

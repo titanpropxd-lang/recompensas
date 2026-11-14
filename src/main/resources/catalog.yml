@@ -5,7 +5,7 @@ cosmetics:
     categoria: AURAS
     slot: AURA
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Una llama discreta danza a tu alrededor.
     color: '#ff7a1a'
     particulas:
@@ -60,7 +60,7 @@ cosmetics:
     categoria: AURAS
     slot: AURA
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Copos que giran con el viento del norte.
     color: '#bfe9ff'
     particulas:
@@ -403,7 +403,7 @@ cosmetics:
     categoria: AURAS
     slot: AURA
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Hojas mecidas por la brisa.
     color: '#6ecb63'
     particulas:
@@ -658,7 +658,7 @@ cosmetics:
     categoria: SOMBREROS
     slot: HAT
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Sencillo y fiable.
     model: hat_casco_hierro
     color: '#9aa0a8'
@@ -730,7 +730,7 @@ cosmetics:
     categoria: SOMBREROS
     slot: HAT
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Para quien empieza en las artes arcanas.
     model: hat_mago_aprendiz
     color: '#4b2a8a'
@@ -810,7 +810,7 @@ cosmetics:
     categoria: SOMBREROS
     slot: HAT
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Fuertes y retorcidos.
     model: hat_cuernos_cabra
     color: '#8a6f4d'
@@ -853,7 +853,7 @@ cosmetics:
     categoria: SOMBREROS
     slot: HAT
     rareza: RARE
-    tier: FREE
+    tier: PREMIUM
     desc: Un orbe que flota sobre ti.
     model: hat_orbe_flotante
     color: '#c77dff'
@@ -950,7 +950,7 @@ cosmetics:
     categoria: MASCOTAS
     slot: PET
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Un zorro curioso con ojos mágicos.
     model: pet_zorro_arcano
     color: '#e07a2f'
@@ -1012,7 +1012,7 @@ cosmetics:
     categoria: MASCOTAS
     slot: PET
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Compañero de las noches largas.
     model: pet_cuervo_nocturno
     color: '#1a1622'
@@ -1073,7 +1073,7 @@ cosmetics:
     categoria: MASCOTAS
     slot: PET
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Pequeño, terco y leal.
     model: pet_golem_piedra
     color: '#8a8a8a'
@@ -1387,7 +1387,7 @@ cosmetics:
     categoria: ALAS_CAPAS
     slot: BACK
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Para recorrer el reino.
     model: cape_viajero
     color: '#5a3a22'
@@ -1405,7 +1405,7 @@ cosmetics:
     categoria: ALAS_CAPAS
     slot: BACK
     rareza: RARE
-    tier: FREE
+    tier: PREMIUM
     desc: Terciopelo y oro.
     model: cape_real_roja
     color: '#a01028'
@@ -1509,7 +1509,7 @@ cosmetics:
     categoria: EFECTOS
     slot: WALK
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Una estela de polvo mágico.
     color: '#cfa66b'
     particulas:
@@ -1533,7 +1533,7 @@ cosmetics:
     categoria: EFECTOS
     slot: WALK
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Chispas a cada paso.
     color: '#ffe28a'
     particulas:
@@ -1606,7 +1606,7 @@ cosmetics:
     categoria: EFECTOS
     slot: JUMP
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Un anillo al saltar.
     color: '#ffffff'
     particulas:
@@ -1685,7 +1685,7 @@ cosmetics:
     categoria: EFECTOS
     slot: LAND
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Polvo al aterrizar.
     color: '#8a6f4d'
     particulas:
@@ -1765,7 +1765,7 @@ cosmetics:
     categoria: EFECTOS
     slot: KILL
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Un alma se eleva.
     color: '#7ad8ff'
     particulas:
@@ -1852,7 +1852,7 @@ cosmetics:
     categoria: EFECTOS
     slot: DAMAGE
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Chispas al recibir daño.
     color: '#ffd25a'
     particulas:
@@ -1907,7 +1907,7 @@ cosmetics:
     categoria: EFECTOS
     slot: SPAWN
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Apareces entre destellos.
     color: '#ffffff'
     particulas:
@@ -2049,7 +2049,7 @@ cosmetics:
     categoria: OTROS
     slot: RING
     rareza: COMMON
-    tier: FREE
+    tier: PREMIUM
     desc: Un aro simple que gira sobre tu cintura.
     model: ring_plata
     color: '#cfd3da'

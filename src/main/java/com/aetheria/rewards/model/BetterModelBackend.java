@@ -7,7 +7,14 @@ import kr.toxicity.model.api.bukkit.platform.BukkitAdapter;
 import kr.toxicity.model.api.data.renderer.ModelRenderer;
 import kr.toxicity.model.api.tracker.DummyTracker;
 import kr.toxicity.model.api.tracker.ModelScaler;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.UUID;
 
 /**
  * Unica clase que toca la API de BetterModel 2.0.1 (verificada contra el jar):
@@ -23,13 +30,33 @@ public final class BetterModelBackend implements ModelManager.Backend {
         if (r == null) return null;
         DummyTracker t = r.create(BukkitAdapter.adapt(loc));
         if (scale != 1f) t.scaler(ModelScaler.value(scale));
-        return new Handle(t);
+        Handle h = new Handle(t, loc);
+        h.refreshViewers(48);
+        return h;
     }
 
     private static final class Handle implements ModelHandle {
         private final DummyTracker t;
-        Handle(DummyTracker t) { this.t = t; }
-        @Override public void move(Location loc) { if (!t.isClosed()) t.location(BukkitAdapter.adapt(loc)); }
+        private Location loc;
+        private final Set<UUID> viewers = new HashSet<>();
+        Handle(DummyTracker t, Location loc) { this.t = t; this.loc = loc; }
+        @Override public void move(Location l) { this.loc = l; if (!t.isClosed()) t.location(BukkitAdapter.adapt(l)); }
+        @Override public void refreshViewers(double radius) {
+            if (t.isClosed() || loc == null || loc.getWorld() == null) return;
+            Set<UUID> now = new HashSet<>();
+            for (Player p : loc.getWorld().getNearbyPlayers(loc, radius)) {
+                now.add(p.getUniqueId());
+                if (viewers.add(p.getUniqueId())) t.spawn(BukkitAdapter.adapt(p));
+            }
+            Iterator<UUID> it = viewers.iterator();
+            while (it.hasNext()) {
+                UUID u = it.next();
+                if (now.contains(u)) continue;
+                it.remove();
+                Player p = Bukkit.getPlayer(u);
+                if (p != null) t.remove(BukkitAdapter.adapt(p));
+            }
+        }
         @Override public void animate(String animation, Mode mode) {
             if (t.isClosed()) return;
             AnimationIterator.Type type = switch (mode) {

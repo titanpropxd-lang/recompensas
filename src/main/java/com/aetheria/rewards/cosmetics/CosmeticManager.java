@@ -8,6 +8,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -42,11 +45,13 @@ public class CosmeticManager {
     private final Map<UUID, Float> maxFall = new HashMap<>();
     private final Map<String, Long> cooldown = new HashMap<>();
     private long tick = 0;
+    private final NamespacedKey voucherKey;
 
     public CosmeticManager(AetheriaRewards plugin) {
         this.plugin = plugin;
         this.auras = new AuraManager(plugin);
         this.pets = new PetManager(plugin);
+        this.voucherKey = new NamespacedKey(plugin, "cosmetic_voucher");
         load();
         Bukkit.getScheduler().runTaskTimer(plugin, this::run, 40L, 2L);
     }
@@ -125,6 +130,22 @@ public class CosmeticManager {
         if (d != null && def.id.equals(d.equipped.get(def.slot))) Util.glow(it);
         if (d != null && !own) { it.setType(Material.PAPER); }
         return it;
+    }
+
+    /** Hoja de cosmetico: item con el icono del cosmetico; clic derecho para desbloquearlo. */
+    public ItemStack voucher(CosmeticDef d, int amount) {
+        ItemStack it = Util.item(Material.PAPER, d.cmd, d.rarity.color + "§lCosmético: §f" + d.name,
+            List.of(d.rarity.tag() + " §8• §7" + d.category.label, "", "§7" + d.desc, "", "§e▶ Clic derecho para desbloquear"));
+        ItemMeta m = it.getItemMeta();
+        m.getPersistentDataContainer().set(voucherKey, PersistentDataType.STRING, d.id);
+        m.setEnchantmentGlintOverride(true);
+        it.setItemMeta(m);
+        it.setAmount(Math.max(1, Math.min(64, amount)));
+        return it;
+    }
+    public String voucherOf(ItemStack it) {
+        if (it == null || !it.hasItemMeta()) return null;
+        return it.getItemMeta().getPersistentDataContainer().get(voucherKey, PersistentDataType.STRING);
     }
 
     public boolean equip(Player p, CosmeticDef def) {
@@ -312,7 +333,7 @@ public class CosmeticManager {
             if (h == null) return;
             h.animate(anim, ModelHandle.Mode.LOOP);
             m.put(slot, h);
-        } else h.move(at);
+        } else { h.move(at); if (tick % 10 == 0) h.refreshViewers(48); }
     }
 
     public Collection<String> slotsOf(PlayerData d) { return d.equipped.keySet(); }
