@@ -51,7 +51,8 @@ public class CosmeticDef {
         d.scale = s.getDouble("scale", 1.0);
         List<?> ps = s.getList("particulas");
         if (ps != null) for (Object o : ps) {
-            if (!(o instanceof java.util.Map<?, ?> m)) continue;
+            if (!(o instanceof java.util.Map<?, ?> raw)) continue;
+            @SuppressWarnings("unchecked") java.util.Map<String, Object> m = (java.util.Map<String, Object>) raw;
             Spec sp = new Spec();
             sp.tipo = String.valueOf(m.getOrDefault("tipo", "END_ROD"));
             sp.forma = String.valueOf(m.getOrDefault("forma", "SPIRAL"));
