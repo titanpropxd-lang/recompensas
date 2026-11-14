@@ -1,0 +1,31 @@
+# Evento de febrero 2027. tiers: puntos -> recompensa. Puntos = misiones FEBRERO reclamadas.
+start: 2027-02-01T00:00
+end: 2027-03-01T00:00
+tiers:
+  '1':
+    type: CORONA
+    amount: 50
+  '2':
+    type: COSMETIC
+    cosmetic: fx_walk_corazones
+    amount: 1
+  '3':
+    type: KEY
+    crate: evento
+    amount: 1
+  '5':
+    type: COSMETIC
+    cosmetic: aura_corazones
+    amount: 1
+  '7':
+    type: COSMETIC
+    cosmetic: wing_rosadas
+    amount: 1
+  '9':
+    type: COSMETIC
+    cosmetic: pet_cupido
+    amount: 1
+  '12':
+    type: COSMETIC
+    cosmetic: hat_corona_amor
+    amount: 1

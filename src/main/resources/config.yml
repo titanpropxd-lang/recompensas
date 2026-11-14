@@ -1,0 +1,15 @@
+# AetheriaRewards - configuracion general
+# Zona horaria para reinicios de misiones, adviento y febrero (formato IANA)
+timezone: America/Mexico_City
+
+# Compensacion en Coronas Reales si un cosmetico entregado ya estaba desbloqueado
+duplicate-compensation:
+  COMMON: 10
+  RARE: 25
+  EPIC: 50
+  LEGENDARY: 100
+  MYTHIC: 200
+
+# Fondos ornamentales en las GUIs (requiere el resource pack de Aetheria cargado).
+# false = marco de cristales (funciona sin resource pack). Activalo cuando el pack este instalado.
+gui-skin: false
