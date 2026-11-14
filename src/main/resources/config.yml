@@ -1,0 +1,29 @@
+# AetheriaRewards - configuracion general
+# Zona horaria para reinicios de misiones, adviento y febrero (formato IANA)
+timezone: America/Mexico_City
+
+# Compensacion en Coronas Reales si un cosmetico entregado ya estaba desbloqueado
+duplicate-compensation:
+  COMMON: 10
+  RARE: 25
+  EPIC: 50
+  LEGENDARY: 100
+  MYTHIC: 200
+
+# Fondos ornamentales en las GUIs (requiere el resource pack de Aetheria cargado).
+# false = marco de cristales (funciona sin resource pack). Activalo cuando el pack este instalado.
+gui-skin: false
+
+# Ajuste GLOBAL de altura de todos los sombreros (en bloques). Negativo = mas bajo. Si flotan, baja este valor (ej. -0.12).
+hat-y-offset: 0.0
+
+# Almacenamiento de datos de jugadores: yaml (archivos) | sqlite | mysql (varios servidores comparten datos; gana la ultima escritura).
+# Si cambias de yaml a sqlite/mysql, los jugadores se migran solos al entrar. Si la base falla al iniciar se usa yaml.
+storage:
+  type: yaml
+  mysql:
+    host: localhost
+    port: 3306
+    database: aetheria
+    user: root
+    password: ""

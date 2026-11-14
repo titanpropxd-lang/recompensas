@@ -1,0 +1,241 @@
+# Pase de batalla. Fechas en la zona horaria de config.yml. Premium = permiso 'premium-permission'.
+premium-permission: rewards.premium
+season:
+  id: s1
+  name: 'Temporada 1: El Reino Despierta'
+  start: 2026-12-01T00:00
+  end: 2027-03-01T00:00
+max-level: 30
+xp-base: 500
+xp-increment: 100
+levels:
+  '1':
+    free:
+      type: CORONA
+      amount: 12
+    premium:
+      type: CORONA
+      amount: 45
+  '2':
+    free:
+      type: CORONA
+      amount: 14
+    premium:
+      type: CORONA
+      amount: 50
+  '3':
+    free:
+      type: CORONA
+      amount: 16
+    premium:
+      type: KEY
+      crate: dorado
+      amount: 1
+  '4':
+    free:
+      type: CORONA
+      amount: 18
+    premium:
+      type: CORONA
+      amount: 60
+  '5':
+    free:
+      type: KEY
+      crate: madera
+      amount: 1
+    premium:
+      type: COSMETIC
+      cosmetic: hat_corona_amatista
+      amount: 1
+  '6':
+    free:
+      type: CORONA
+      amount: 22
+    premium:
+      type: KEY
+      crate: magico
+      amount: 1
+  '7':
+    free:
+      type: CORONA
+      amount: 24
+    premium:
+      type: CORONA
+      amount: 75
+  '8':
+    free:
+      type: CORONA
+      amount: 26
+    premium:
+      type: CORONA
+      amount: 80
+  '9':
+    free:
+      type: CORONA
+      amount: 28
+    premium:
+      type: KEY
+      crate: hierro
+      amount: 1
+  '10':
+    free:
+      type: COSMETIC
+      cosmetic: aura_pulso
+      amount: 1
+    premium:
+      type: COSMETIC
+      cosmetic: pet_dragon_escarcha
+      amount: 1
+  '11':
+    free:
+      type: CORONA
+      amount: 32
+    premium:
+      type: CORONA
+      amount: 95
+  '12':
+    free:
+      type: CORONA
+      amount: 34
+    premium:
+      type: KEY
+      crate: dorado
+      amount: 1
+  '13':
+    free:
+      type: CORONA
+      amount: 36
+    premium:
+      type: CORONA
+      amount: 105
+  '14':
+    free:
+      type: CORONA
+      amount: 38
+    premium:
+      type: CORONA
+      amount: 110
+  '15':
+    free:
+      type: KEY
+      crate: madera
+      amount: 1
+    premium:
+      type: COSMETIC
+      cosmetic: aura_halo
+      amount: 1
+  '16':
+    free:
+      type: CORONA
+      amount: 42
+    premium:
+      type: CORONA
+      amount: 120
+  '17':
+    free:
+      type: CORONA
+      amount: 44
+    premium:
+      type: CORONA
+      amount: 125
+  '18':
+    free:
+      type: CORONA
+      amount: 46
+    premium:
+      type: KEY
+      crate: hierro
+      amount: 1
+  '19':
+    free:
+      type: CORONA
+      amount: 48
+    premium:
+      type: CORONA
+      amount: 135
+  '20':
+    free:
+      type: COSMETIC
+      cosmetic: pet_cuervo_runas
+      amount: 1
+    premium:
+      type: COSMETIC
+      cosmetic: wing_serafin
+      amount: 1
+  '21':
+    free:
+      type: CORONA
+      amount: 52
+    premium:
+      type: KEY
+      crate: dorado
+      amount: 1
+  '22':
+    free:
+      type: CORONA
+      amount: 54
+    premium:
+      type: CORONA
+      amount: 150
+  '23':
+    free:
+      type: CORONA
+      amount: 56
+    premium:
+      type: CORONA
+      amount: 155
+  '24':
+    free:
+      type: CORONA
+      amount: 58
+    premium:
+      type: KEY
+      crate: magico
+      amount: 1
+  '25':
+    free:
+      type: KEY
+      crate: madera
+      amount: 1
+    premium:
+      type: COSMETIC
+      cosmetic: pet_dragon_amatista
+      amount: 1
+  '26':
+    free:
+      type: CORONA
+      amount: 62
+    premium:
+      type: CORONA
+      amount: 170
+  '27':
+    free:
+      type: CORONA
+      amount: 64
+    premium:
+      type: KEY
+      crate: hierro
+      amount: 1
+  '28':
+    free:
+      type: CORONA
+      amount: 66
+    premium:
+      type: CORONA
+      amount: 180
+  '29':
+    free:
+      type: CORONA
+      amount: 68
+    premium:
+      type: CORONA
+      amount: 185
+  '30':
+    free:
+      type: COSMETIC
+      cosmetic: wing_dragon_verde
+      amount: 1
+    premium:
+      type: COSMETIC
+      cosmetic: hat_corona_aetheria
+      amount: 1

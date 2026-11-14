@@ -1,0 +1,2323 @@
+# Catalogo de 100 cosmeticos (20 FREE + 80 PREMIUM). Editable. 'offset' [x,y,z], 'yaw', 'scale' ajustan la colocacion.
+cosmetics:
+  aura_llama_viva:
+    nombre: Llama Viva
+    categoria: AURAS
+    slot: AURA
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Una llama discreta danza a tu alrededor.
+    color: '#ff7a1a'
+    particulas:
+    - tipo: FLAME
+      forma: SPIRAL
+      cantidad: 2
+      radio: 0.8
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5001
+  aura_infierno:
+    nombre: Infierno Carmesí
+    categoria: AURAS
+    slot: AURA
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Brasas y lava en un anillo abrasador.
+    color: '#d62828'
+    particulas:
+    - tipo: FLAME
+      forma: RING
+      cantidad: 6
+      radio: 0.9
+      altura: 0.2
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: LAVA
+      forma: ORBIT
+      cantidad: 1
+      radio: 1.0
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5002
+  aura_escarcha:
+    nombre: Escarcha Pálida
+    categoria: AURAS
+    slot: AURA
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Copos que giran con el viento del norte.
+    color: '#bfe9ff'
+    particulas:
+    - tipo: SNOWFLAKE
+      forma: SPIRAL
+      cantidad: 2
+      radio: 0.8
+      altura: 1.9
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5003
+  aura_ventisca:
+    nombre: Ventisca Eterna
+    categoria: AURAS
+    slot: AURA
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Una ventisca ligada a tu espíritu.
+    color: '#9fd8ff'
+    particulas:
+    - tipo: SNOWFLAKE
+      forma: ORBIT
+      cantidad: 3
+      radio: 1.0
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: CLOUD
+      forma: RING
+      cantidad: 1
+      radio: 0.8
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5004
+  aura_sombra:
+    nombre: Sombra Errante
+    categoria: AURAS
+    slot: AURA
+    rareza: RARE
+    tier: PREMIUM
+    desc: Humo oscuro que respira contigo.
+    color: '#2b2233'
+    particulas:
+    - tipo: LARGE_SMOKE
+      forma: SPIRAL
+      cantidad: 1
+      radio: 0.7
+      altura: 1.7
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5005
+  aura_vacio:
+    nombre: Vacío Abisal
+    categoria: AURAS
+    slot: AURA
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: El abismo te observa de vuelta.
+    color: '#5a1fa8'
+    particulas:
+    - tipo: PORTAL
+      forma: RING
+      cantidad: 8
+      radio: 1.0
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: SQUID_INK
+      forma: ORBIT
+      cantidad: 1
+      radio: 0.9
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5006
+  aura_pulso:
+    nombre: Pulso Arcano
+    categoria: AURAS
+    slot: AURA
+    rareza: RARE
+    tier: PREMIUM
+    desc: Energía violeta orbitando en pulsos.
+    color: '#8a3cff'
+    particulas:
+    - tipo: DUST
+      forma: ORBIT
+      cantidad: 3
+      radio: 0.9
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.2
+      color: '#8a3cff'
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5007
+  aura_nucleo:
+    nombre: Núcleo Estelar
+    categoria: AURAS
+    slot: AURA
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Fragmentos de luz estelar.
+    color: '#ffffff'
+    particulas:
+    - tipo: END_ROD
+      forma: ORBIT
+      cantidad: 2
+      radio: 1.0
+      altura: 1.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5008
+  aura_runas:
+    nombre: Runas Danzantes
+    categoria: AURAS
+    slot: AURA
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Glifos antiguos flotan a tu alrededor.
+    color: '#c9a3ff'
+    particulas:
+    - tipo: ENCHANT
+      forma: SPIRAL
+      cantidad: 6
+      radio: 1.0
+      altura: 2.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5009
+  aura_hadas:
+    nombre: Polvo de Hadas
+    categoria: AURAS
+    slot: AURA
+    rareza: RARE
+    tier: PREMIUM
+    desc: Brillos traviesos y verdes.
+    color: '#7dff9b'
+    particulas:
+    - tipo: WITCH
+      forma: SPIRAL
+      cantidad: 2
+      radio: 0.9
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: HAPPY_VILLAGER
+      forma: RAIN
+      cantidad: 1
+      radio: 0.9
+      altura: 2.2
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5010
+  aura_velo:
+    nombre: Velo Violeta
+    categoria: AURAS
+    slot: AURA
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Un velo de magia que cambia de tono.
+    color: '#d27bff'
+    particulas:
+    - tipo: DUST_COLOR_TRANSITION
+      forma: SPIRAL
+      cantidad: 3
+      radio: 0.8
+      altura: 1.9
+      velocidad: 0.0
+      tamano: 1.3
+      color: '#7a3cff'
+      color2: '#ff7ad9'
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5011
+  aura_halo:
+    nombre: Halo Celestial
+    categoria: AURAS
+    slot: AURA
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Un halo de luz sobre tu cabeza.
+    color: '#fff3b0'
+    particulas:
+    - tipo: END_ROD
+      forma: HALO
+      cantidad: 8
+      radio: 0.45
+      altura: 2.3
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5012
+  aura_estrellas:
+    nombre: Lluvia de Estrellas
+    categoria: AURAS
+    slot: AURA
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Estrellas fugaces caen sobre ti.
+    color: '#ffe28a'
+    particulas:
+    - tipo: FIREWORK
+      forma: RAIN
+      cantidad: 2
+      radio: 0.9
+      altura: 2.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5013
+  aura_chispa:
+    nombre: Chispa Eléctrica
+    categoria: AURAS
+    slot: AURA
+    rareza: RARE
+    tier: PREMIUM
+    desc: Descargas azules chisporrotean.
+    color: '#6ad8ff'
+    particulas:
+    - tipo: ELECTRIC_SPARK
+      forma: BURST
+      cantidad: 3
+      radio: 0.8
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5014
+  aura_tormenta:
+    nombre: Tormenta Viva
+    categoria: AURAS
+    slot: AURA
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Nubes y relámpagos te siguen.
+    color: '#8fb8ff'
+    particulas:
+    - tipo: ELECTRIC_SPARK
+      forma: ORBIT
+      cantidad: 3
+      radio: 1.0
+      altura: 1.4
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: CLOUD
+      forma: HALO
+      cantidad: 1
+      radio: 0.5
+      altura: 2.4
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5015
+  aura_bosque:
+    nombre: Brisa del Bosque
+    categoria: AURAS
+    slot: AURA
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Hojas mecidas por la brisa.
+    color: '#6ecb63'
+    particulas:
+    - tipo: HAPPY_VILLAGER
+      forma: SPIRAL
+      cantidad: 1
+      radio: 0.9
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: CHERRY_LEAVES
+      forma: RAIN
+      cantidad: 1
+      radio: 0.8
+      altura: 2.4
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5016
+  aura_corazones:
+    nombre: Aura de Corazones
+    categoria: AURAS
+    slot: AURA
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Corazones que nacen del cariño.
+    color: '#ff6fa5'
+    particulas:
+    - tipo: HEART
+      forma: SPIRAL
+      cantidad: 1
+      radio: 0.8
+      altura: 1.9
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    evento: febrero
+    sigue: head
+    cmd: 5017
+  aura_nevada:
+    nombre: Nevada Navideña
+    categoria: AURAS
+    slot: AURA
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Nieve y lucecitas de Navidad.
+    color: '#e8f6ff'
+    particulas:
+    - tipo: SNOWFLAKE
+      forma: RAIN
+      cantidad: 3
+      radio: 1.0
+      altura: 2.8
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: END_ROD
+      forma: ORBIT
+      cantidad: 1
+      radio: 1.0
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    evento: adviento
+    sigue: head
+    cmd: 5018
+  hat_corona_oro:
+    nombre: Corona de Oro
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: RARE
+    tier: PREMIUM
+    desc: Un clásico de la nobleza.
+    model: hat_corona_oro
+    color: '#f2c14e'
+    particulas: []
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5019
+  hat_corona_amatista:
+    nombre: Corona de Amatista
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Cristales de amatista viva.
+    model: hat_corona_amatista
+    color: '#8a5cff'
+    particulas: []
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5020
+  hat_corona_aetheria:
+    nombre: Corona Real de Aetheria
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: MYTHIC
+    tier: PREMIUM
+    desc: La corona del reino, forjada con runas.
+    model: hat_corona_aetheria
+    color: '#f2c14e'
+    particulas:
+    - tipo: END_ROD
+      forma: HALO
+      cantidad: 3
+      radio: 0.4
+      altura: 2.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5021
+  hat_corona_amor:
+    nombre: Corona del Amor
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Edición de febrero, forjada con cariño.
+    model: hat_corona_amor
+    color: '#ff9bd0'
+    particulas:
+    - tipo: HEART
+      forma: HALO
+      cantidad: 1
+      radio: 0.4
+      altura: 2.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    evento: febrero
+    sigue: head
+    cmd: 5022
+  hat_corona_hielo:
+    nombre: Corona de Escarcha
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: 'Edición de Navidad: hielo eterno.'
+    model: hat_corona_hielo
+    color: '#bfe9ff'
+    particulas:
+    - tipo: SNOWFLAKE
+      forma: HALO
+      cantidad: 1
+      radio: 0.4
+      altura: 2.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    evento: adviento
+    sigue: head
+    cmd: 5023
+  hat_mascara_sombra:
+    nombre: Máscara de Sombra
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: RARE
+    tier: PREMIUM
+    desc: Rostro sin nombre.
+    model: hat_mascara_sombra
+    color: '#7a3cff'
+    particulas: []
+    offset:
+    - 0
+    - -0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5024
+  hat_mascara_oro:
+    nombre: Máscara Dorada
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Mascarada de la corte.
+    model: hat_mascara_oro
+    color: '#f2c14e'
+    particulas: []
+    offset:
+    - 0
+    - -0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5025
+  hat_mascara_demonio:
+    nombre: Máscara de Demonio
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Una sonrisa que hiela la sangre.
+    model: hat_mascara_demonio
+    color: '#d62828'
+    particulas: []
+    offset:
+    - 0
+    - -0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5026
+  hat_casco_hierro:
+    nombre: Casco de Hierro
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Sencillo y fiable.
+    model: hat_casco_hierro
+    color: '#9aa0a8'
+    particulas: []
+    offset:
+    - 0
+    - -0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5027
+  hat_casco_dorado:
+    nombre: Casco Alado Dorado
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Alas de oro a los lados.
+    model: hat_casco_dorado
+    color: '#f2c14e'
+    particulas: []
+    offset:
+    - 0
+    - -0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5028
+  hat_casco_oscuro:
+    nombre: Casco del Caballero Oscuro
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Un yelmo sin piedad.
+    model: hat_casco_oscuro
+    color: '#4d4560'
+    particulas: []
+    offset:
+    - 0
+    - -0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5029
+  hat_casco_runico:
+    nombre: Casco Rúnico
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Runas brillan en el acero.
+    model: hat_casco_runico
+    color: '#8a5cff'
+    particulas: []
+    offset:
+    - 0
+    - -0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5030
+  hat_mago_aprendiz:
+    nombre: Gorro de Mago Aprendiz
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Para quien empieza en las artes arcanas.
+    model: hat_mago_aprendiz
+    color: '#4b2a8a'
+    particulas: []
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5031
+  hat_mago_archimago:
+    nombre: Sombrero de Archimago
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Sabiduría en cada pliegue.
+    model: hat_mago_archimago
+    color: '#7a3cff'
+    particulas: []
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5032
+  hat_mago_fuego:
+    nombre: Sombrero del Piromante
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Huele levemente a chamusquina.
+    model: hat_mago_fuego
+    color: '#d62828'
+    particulas:
+    - tipo: SMALL_FLAME
+      forma: COLUMN
+      cantidad: 1
+      radio: 0.1
+      altura: 0.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5033
+  hat_mago_invierno:
+    nombre: Gorro de Invierno
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: RARE
+    tier: PREMIUM
+    desc: Edición de Navidad.
+    model: hat_mago_invierno
+    color: '#d62839'
+    particulas: []
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    evento: adviento
+    sigue: head
+    cmd: 5034
+  hat_cuernos_cabra:
+    nombre: Cuernos de Cabra Montesa
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Fuertes y retorcidos.
+    model: hat_cuernos_cabra
+    color: '#8a6f4d'
+    particulas: []
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5035
+  hat_cuernos_demonio:
+    nombre: Cuernos Infernales
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Cuernos que arden por dentro.
+    model: hat_cuernos_demonio
+    color: '#d62828'
+    particulas:
+    - tipo: SMALL_FLAME
+      forma: COLUMN
+      cantidad: 1
+      radio: 0.1
+      altura: 0.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - -0.02
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5036
+  hat_orbe_flotante:
+    nombre: Orbe Arcano Flotante
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: RARE
+    tier: PREMIUM
+    desc: Un orbe que flota sobre ti.
+    model: hat_orbe_flotante
+    color: '#c77dff'
+    particulas: []
+    offset:
+    - 0
+    - 0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5037
+  hat_tomo_flotante:
+    nombre: Tomo Prohibido
+    categoria: SOMBREROS
+    slot: HAT
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Sus páginas susurran.
+    model: hat_tomo_flotante
+    color: '#7a5614'
+    particulas: []
+    offset:
+    - 0
+    - 0.25
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5038
+  pet_dragon_carmesi:
+    nombre: Dragón Carmesí
+    categoria: MASCOTAS
+    slot: PET
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Cría de dragón de fuego.
+    model: pet_dragon_carmesi
+    color: '#c0302a'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5039
+  pet_dragon_escarcha:
+    nombre: Dragón de Escarcha
+    categoria: MASCOTAS
+    slot: PET
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Su aliento congela el aire.
+    model: pet_dragon_escarcha
+    color: '#7fc8ff'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5040
+  pet_dragon_amatista:
+    nombre: Dragón Amatista
+    categoria: MASCOTAS
+    slot: PET
+    rareza: MYTHIC
+    tier: PREMIUM
+    desc: Escamas de cristal violeta.
+    model: pet_dragon_amatista
+    color: '#8a5cff'
+    particulas:
+    - tipo: END_ROD
+      forma: BURST
+      cantidad: 1
+      radio: 0.3
+      altura: 0.6
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5041
+  pet_zorro_arcano:
+    nombre: Zorro Arcano
+    categoria: MASCOTAS
+    slot: PET
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Un zorro curioso con ojos mágicos.
+    model: pet_zorro_arcano
+    color: '#e07a2f'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5042
+  pet_zorro_reno:
+    nombre: Reno de Escarcha
+    categoria: MASCOTAS
+    slot: PET
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Edición de Navidad, con nariz brillante.
+    model: pet_zorro_reno
+    color: '#8a5a35'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    evento: adviento
+    sigue: pet
+    cmd: 5043
+  pet_zorro_sombrio:
+    nombre: Zorro Sombrío
+    categoria: MASCOTAS
+    slot: PET
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Se mueve entre las sombras.
+    model: pet_zorro_sombrio
+    color: '#2b2233'
+    particulas:
+    - tipo: SMOKE
+      forma: COLUMN
+      cantidad: 1
+      radio: 0.2
+      altura: 0.4
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5044
+  pet_cuervo_nocturno:
+    nombre: Cuervo Nocturno
+    categoria: MASCOTAS
+    slot: PET
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Compañero de las noches largas.
+    model: pet_cuervo_nocturno
+    color: '#1a1622'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5045
+  pet_cuervo_runas:
+    nombre: Cuervo de Runas
+    categoria: MASCOTAS
+    slot: PET
+    rareza: RARE
+    tier: PREMIUM
+    desc: Lleva runas bordadas en las alas.
+    model: pet_cuervo_runas
+    color: '#3a2a5a'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5046
+  pet_cuervo_espectral:
+    nombre: Cuervo Espectral
+    categoria: MASCOTAS
+    slot: PET
+    rareza: EPIC
+    tier: PREMIUM
+    desc: No proyecta sombra.
+    model: pet_cuervo_espectral
+    color: '#7ad8ff'
+    particulas:
+    - tipo: SOUL
+      forma: COLUMN
+      cantidad: 1
+      radio: 0.1
+      altura: 0.3
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5047
+  pet_golem_piedra:
+    nombre: Golem de Piedra
+    categoria: MASCOTAS
+    slot: PET
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Pequeño, terco y leal.
+    model: pet_golem_piedra
+    color: '#8a8a8a'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5048
+  pet_golem_cristal:
+    nombre: Golem de Cristal
+    categoria: MASCOTAS
+    slot: PET
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Su núcleo late con magia.
+    model: pet_golem_cristal
+    color: '#9b5cff'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5049
+  pet_espiritu_errante:
+    nombre: Espíritu Errante
+    categoria: MASCOTAS
+    slot: PET
+    rareza: RARE
+    tier: PREMIUM
+    desc: Un alma curiosa.
+    model: pet_espiritu_errante
+    color: '#e8f6ff'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5050
+  pet_espiritu_bosque:
+    nombre: Espíritu del Bosque
+    categoria: MASCOTAS
+    slot: PET
+    rareza: RARE
+    tier: PREMIUM
+    desc: Guardián de los árboles.
+    model: pet_espiritu_bosque
+    color: '#a8f0a0'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5051
+  pet_espiritu_lunar:
+    nombre: Espíritu Lunar
+    categoria: MASCOTAS
+    slot: PET
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Nace con la luna llena.
+    model: pet_espiritu_lunar
+    color: '#d8c8ff'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5052
+  pet_cupido:
+    nombre: Cupido
+    categoria: MASCOTAS
+    slot: PET
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: 'Edición de febrero: vuela con flechas de cariño.'
+    model: pet_cupido
+    color: '#ff9bd0'
+    particulas:
+    - tipo: HEART
+      forma: COLUMN
+      cantidad: 1
+      radio: 0.2
+      altura: 0.6
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    evento: febrero
+    sigue: pet
+    cmd: 5053
+  pet_buho_arcano:
+    nombre: Búho Arcano
+    categoria: MASCOTAS
+    slot: PET
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Sabe más de lo que dice.
+    model: pet_buho_arcano
+    color: '#6a4cae'
+    particulas: []
+    offset:
+    - 0.9
+    - 0.35
+    - 0.9
+    yaw: 0
+    scale: 1.4
+    sigue: pet
+    cmd: 5054
+  wing_angelical:
+    nombre: Alas Angelicales
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Plumas de luz.
+    model: wing_angelical
+    color: '#ffffff'
+    particulas: []
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5055
+  wing_serafin:
+    nombre: Alas de Serafín
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Oro y fuego sagrado.
+    model: wing_serafin
+    color: '#f2c14e'
+    particulas:
+    - tipo: END_ROD
+      forma: WINGS
+      cantidad: 1
+      radio: 0.1
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5056
+  wing_rosadas:
+    nombre: Alas Rosadas
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Edición de febrero.
+    model: wing_rosadas
+    color: '#ff9bd0'
+    particulas:
+    - tipo: HEART
+      forma: WINGS
+      cantidad: 1
+      radio: 0.1
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    evento: febrero
+    sigue: body
+    cmd: 5057
+  wing_demonio:
+    nombre: Alas Demoníacas
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Membranas de ceniza.
+    model: wing_demonio
+    color: '#7a1020'
+    particulas: []
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5058
+  wing_abismo:
+    nombre: Alas del Abismo
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Fragmentos del vacío.
+    model: wing_abismo
+    color: '#2b2233'
+    particulas:
+    - tipo: PORTAL
+      forma: WINGS
+      cantidad: 1
+      radio: 0.1
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5059
+  wing_infernal:
+    nombre: Alas Infernales
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: MYTHIC
+    tier: PREMIUM
+    desc: Ardientes y legendarias.
+    model: wing_infernal
+    color: '#d62828'
+    particulas:
+    - tipo: SMALL_FLAME
+      forma: WINGS
+      cantidad: 1
+      radio: 0.1
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5060
+  wing_dragon_verde:
+    nombre: Alas de Dragón Esmeralda
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Escamas verdes.
+    model: wing_dragon_verde
+    color: '#3a9a4a'
+    particulas: []
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5061
+  wing_dragon_oro:
+    nombre: Alas de Dragón Dorado
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: MYTHIC
+    tier: PREMIUM
+    desc: El tesoro de un dragón.
+    model: wing_dragon_oro
+    color: '#f2c14e'
+    particulas:
+    - tipo: FLAME
+      forma: WINGS
+      cantidad: 1
+      radio: 0.1
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 1.2
+    - 0.12
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5062
+  cape_viajero:
+    nombre: Capa de Viajero
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Para recorrer el reino.
+    model: cape_viajero
+    color: '#5a3a22'
+    particulas: []
+    offset:
+    - 0
+    - 1.5
+    - 0.14
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5063
+  cape_real_roja:
+    nombre: Capa Real Carmesí
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: RARE
+    tier: PREMIUM
+    desc: Terciopelo y oro.
+    model: cape_real_roja
+    color: '#a01028'
+    particulas: []
+    offset:
+    - 0
+    - 1.5
+    - 0.14
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5064
+  cape_real_morada:
+    nombre: Capa Real Violeta
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: EPIC
+    tier: PREMIUM
+    desc: La capa de los reyes de Aetheria.
+    model: cape_real_morada
+    color: '#4b2a8a'
+    particulas: []
+    offset:
+    - 0
+    - 1.5
+    - 0.14
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5065
+  cape_encantada_runas:
+    nombre: Capa de Runas
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Runas que brillan en la tela.
+    model: cape_encantada_runas
+    color: '#2a1648'
+    particulas: []
+    offset:
+    - 0
+    - 1.5
+    - 0.14
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5066
+  cape_encantada_estelar:
+    nombre: Capa Estelar
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Un cielo nocturno tejido.
+    model: cape_encantada_estelar
+    color: '#14101c'
+    particulas:
+    - tipo: END_ROD
+      forma: TRAIL
+      cantidad: 1
+      radio: 0.3
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 1.5
+    - 0.14
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5067
+  cape_encantada_fuego:
+    nombre: Capa de Brasas
+    categoria: ALAS_CAPAS
+    slot: BACK
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Hilos de brasa viva.
+    model: cape_encantada_fuego
+    color: '#7a1020'
+    particulas:
+    - tipo: SMALL_FLAME
+      forma: TRAIL
+      cantidad: 1
+      radio: 0.3
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 1.5
+    - 0.14
+    yaw: 0
+    scale: 1.0
+    sigue: body
+    cmd: 5068
+  fx_walk_polvo:
+    nombre: Polvo de Camino
+    categoria: EFECTOS
+    slot: WALK
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Una estela de polvo mágico.
+    color: '#cfa66b'
+    particulas:
+    - tipo: CRIT
+      forma: TRAIL
+      cantidad: 2
+      radio: 0.3
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5069
+  fx_walk_chispas:
+    nombre: Chispas de Hada
+    categoria: EFECTOS
+    slot: WALK
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Chispas a cada paso.
+    color: '#ffe28a'
+    particulas:
+    - tipo: END_ROD
+      forma: TRAIL
+      cantidad: 1
+      radio: 0.3
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5070
+  fx_walk_fuego:
+    nombre: Huellas de Fuego
+    categoria: EFECTOS
+    slot: WALK
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Dejas fuego a tu paso.
+    color: '#ff7a1a'
+    particulas:
+    - tipo: FLAME
+      forma: TRAIL
+      cantidad: 2
+      radio: 0.2
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5071
+  fx_walk_corazones:
+    nombre: Huellas de Corazones
+    categoria: EFECTOS
+    slot: WALK
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Edición de febrero.
+    color: '#ff6fa5'
+    particulas:
+    - tipo: HEART
+      forma: TRAIL
+      cantidad: 1
+      radio: 0.3
+      altura: 0.2
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    evento: febrero
+    sigue: head
+    cmd: 5072
+  fx_jump_ondas:
+    nombre: Onda de Salto
+    categoria: EFECTOS
+    slot: JUMP
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Un anillo al saltar.
+    color: '#ffffff'
+    particulas:
+    - tipo: CLOUD
+      forma: RING
+      cantidad: 10
+      radio: 0.6
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5073
+  fx_jump_runas:
+    nombre: Runas de Salto
+    categoria: EFECTOS
+    slot: JUMP
+    rareza: RARE
+    tier: PREMIUM
+    desc: Runas bajo tus pies.
+    color: '#c77dff'
+    particulas:
+    - tipo: ENCHANT
+      forma: RING
+      cantidad: 14
+      radio: 0.9
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5074
+  fx_jump_alas:
+    nombre: Impulso Alado
+    categoria: EFECTOS
+    slot: JUMP
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Plumas al saltar.
+    color: '#ffffff'
+    particulas:
+    - tipo: CLOUD
+      forma: BURST
+      cantidad: 8
+      radio: 0.5
+      altura: 0.5
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: END_ROD
+      forma: RING
+      cantidad: 10
+      radio: 0.8
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5075
+  fx_land_impacto:
+    nombre: Impacto Telúrico
+    categoria: EFECTOS
+    slot: LAND
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Polvo al aterrizar.
+    color: '#8a6f4d'
+    particulas:
+    - tipo: POOF
+      forma: RING
+      cantidad: 16
+      radio: 1.0
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5076
+  fx_land_estrella:
+    nombre: Aterrizaje Estelar
+    categoria: EFECTOS
+    slot: LAND
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Estrellas al caer.
+    color: '#fff3b0'
+    particulas:
+    - tipo: FIREWORK
+      forma: BURST
+      cantidad: 14
+      radio: 0.8
+      altura: 0.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5077
+  fx_land_sismo:
+    nombre: Sismo Arcano
+    categoria: EFECTOS
+    slot: LAND
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Una onda violeta al caer.
+    color: '#8a3cff'
+    particulas:
+    - tipo: DUST
+      forma: RING
+      cantidad: 24
+      radio: 1.6
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.5
+      color: '#8a3cff'
+    - tipo: ENCHANT
+      forma: BURST
+      cantidad: 20
+      radio: 0.6
+      altura: 0.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5078
+  fx_kill_alma:
+    nombre: Alma Liberada
+    categoria: EFECTOS
+    slot: KILL
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Un alma se eleva.
+    color: '#7ad8ff'
+    particulas:
+    - tipo: SOUL
+      forma: COLUMN
+      cantidad: 6
+      radio: 0.2
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5079
+  fx_kill_explosion:
+    nombre: Estallido Arcano
+    categoria: EFECTOS
+    slot: KILL
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Un estallido violeta.
+    color: '#a020f0'
+    particulas:
+    - tipo: DUST
+      forma: BURST
+      cantidad: 30
+      radio: 0.8
+      altura: 0.8
+      velocidad: 0.0
+      tamano: 1.4
+      color: '#a020f0'
+    - tipo: WITCH
+      forma: BURST
+      cantidad: 20
+      radio: 0.6
+      altura: 0.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5080
+  fx_kill_rayo:
+    nombre: Juicio del Rayo
+    categoria: EFECTOS
+    slot: KILL
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Un rayo sin trueno.
+    color: '#6ad8ff'
+    particulas:
+    - tipo: ELECTRIC_SPARK
+      forma: COLUMN
+      cantidad: 30
+      radio: 0.4
+      altura: 3.0
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: FLASH
+      forma: BURST
+      cantidad: 1
+      radio: 0.1
+      altura: 0.1
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5081
+  fx_dmg_chispas:
+    nombre: Destello de Golpe
+    categoria: EFECTOS
+    slot: DAMAGE
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Chispas al recibir daño.
+    color: '#ffd25a'
+    particulas:
+    - tipo: CRIT
+      forma: BURST
+      cantidad: 12
+      radio: 0.5
+      altura: 0.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5082
+  fx_dmg_escudo:
+    nombre: Escudo Rúnico
+    categoria: EFECTOS
+    slot: DAMAGE
+    rareza: RARE
+    tier: PREMIUM
+    desc: Un escudo se manifiesta.
+    color: '#c77dff'
+    particulas:
+    - tipo: ENCHANT
+      forma: RING
+      cantidad: 24
+      radio: 0.9
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: END_ROD
+      forma: BURST
+      cantidad: 8
+      radio: 0.6
+      altura: 0.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5083
+  fx_spawn_brillo:
+    nombre: Aparición Brillante
+    categoria: EFECTOS
+    slot: SPAWN
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Apareces entre destellos.
+    color: '#ffffff'
+    particulas:
+    - tipo: END_ROD
+      forma: COLUMN
+      cantidad: 20
+      radio: 0.4
+      altura: 2.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5084
+  fx_spawn_portal:
+    nombre: Entrada del Portal
+    categoria: EFECTOS
+    slot: SPAWN
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Un portal te escupe al mundo.
+    color: '#7a3cff'
+    particulas:
+    - tipo: PORTAL
+      forma: RING
+      cantidad: 40
+      radio: 1.0
+      altura: 1.0
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: REVERSE_PORTAL
+      forma: COLUMN
+      cantidad: 20
+      radio: 0.4
+      altura: 2.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5085
+  fx_win_fuegos:
+    nombre: Fuegos de Victoria
+    categoria: EFECTOS
+    slot: VICTORY
+    rareza: RARE
+    tier: PREMIUM
+    desc: Fuegos artificiales de celebración.
+    color: '#ffcc33'
+    particulas:
+    - tipo: FIREWORK
+      forma: BURST
+      cantidad: 40
+      radio: 1.0
+      altura: 1.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5086
+  fx_win_corona:
+    nombre: Lluvia de Oro
+    categoria: EFECTOS
+    slot: VICTORY
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Monedas de luz caen.
+    color: '#f2c14e'
+    particulas:
+    - tipo: DUST
+      forma: RAIN
+      cantidad: 40
+      radio: 1.2
+      altura: 3.0
+      velocidad: 0.0
+      tamano: 1.4
+      color: '#f2c14e'
+    - tipo: TOTEM_OF_UNDYING
+      forma: BURST
+      cantidad: 20
+      radio: 0.8
+      altura: 1.5
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5087
+  fx_win_leyenda:
+    nombre: Ascensión Legendaria
+    categoria: EFECTOS
+    slot: VICTORY
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Una columna de luz celestial.
+    color: '#fff3b0'
+    particulas:
+    - tipo: END_ROD
+      forma: COLUMN
+      cantidad: 60
+      radio: 0.6
+      altura: 4.0
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: TOTEM_OF_UNDYING
+      forma: BURST
+      cantidad: 30
+      radio: 0.9
+      altura: 2.0
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5088
+  ring_plata:
+    nombre: Anillo de Plata
+    categoria: OTROS
+    slot: RING
+    rareza: COMMON
+    tier: PREMIUM
+    desc: Un aro simple que gira sobre tu cintura.
+    model: ring_plata
+    color: '#cfd3da'
+    particulas: []
+    offset:
+    - 0
+    - 0.9
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5089
+  ring_oro:
+    nombre: Anillo de Oro
+    categoria: OTROS
+    slot: RING
+    rareza: RARE
+    tier: PREMIUM
+    desc: Brillante, pesado, ostentoso.
+    model: ring_oro
+    color: '#f2c14e'
+    particulas: []
+    offset:
+    - 0
+    - 0.9
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5090
+  ring_arcano:
+    nombre: Anillo Arcano
+    categoria: OTROS
+    slot: RING
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Pilares de magia orbitan.
+    model: ring_arcano
+    color: '#8a5cff'
+    particulas: []
+    offset:
+    - 0
+    - 0.9
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5091
+  ring_eterno:
+    nombre: Anillo Eterno
+    categoria: OTROS
+    slot: RING
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Nunca deja de girar.
+    model: ring_eterno
+    color: '#ff9bf5'
+    particulas:
+    - tipo: END_ROD
+      forma: RING
+      cantidad: 1
+      radio: 0.9
+      altura: 0.9
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0.9
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5092
+  acc_espadas:
+    nombre: Espadas Orbitales
+    categoria: OTROS
+    slot: ORBIT
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Tres espadas guardan tu espalda.
+    model: acc_espadas
+    color: '#cfd3da'
+    particulas: []
+    offset:
+    - 0
+    - 1.2
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5093
+  acc_runas:
+    nombre: Piedras Rúnicas
+    categoria: OTROS
+    slot: ORBIT
+    rareza: RARE
+    tier: PREMIUM
+    desc: Tres monolitos flotantes.
+    model: acc_runas
+    color: '#4b2a8a'
+    particulas: []
+    offset:
+    - 0
+    - 1.2
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5094
+  acc_mariposas:
+    nombre: Mariposas Mágicas
+    categoria: OTROS
+    slot: ORBIT
+    rareza: RARE
+    tier: PREMIUM
+    desc: Mariposas de luz.
+    model: acc_mariposas
+    color: '#c77dff'
+    particulas: []
+    offset:
+    - 0
+    - 1.2
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5095
+  trans_espectro:
+    nombre: Forma Espectral
+    categoria: OTROS
+    slot: TRANSFORM
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Tu cuerpo se vuelve etéreo y brillante.
+    color: '#9fd8ff'
+    particulas:
+    - tipo: SOUL
+      forma: SPIRAL
+      cantidad: 1
+      radio: 0.5
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: END_ROD
+      forma: COLUMN
+      cantidad: 1
+      radio: 0.3
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5096
+  trans_llama:
+    nombre: Alma de Fuego
+    categoria: OTROS
+    slot: TRANSFORM
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: El fuego brota de tu cuerpo.
+    color: '#ff7a1a'
+    particulas:
+    - tipo: FLAME
+      forma: COLUMN
+      cantidad: 3
+      radio: 0.35
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    - tipo: SMALL_FLAME
+      forma: SPIRAL
+      cantidad: 1
+      radio: 0.5
+      altura: 1.8
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5097
+  esp_nova:
+    nombre: Nova Estelar
+    categoria: OTROS
+    slot: SPECIAL
+    rareza: LEGENDARY
+    tier: PREMIUM
+    desc: Cada pocos segundos, una nova de luz.
+    color: '#fff3b0'
+    particulas:
+    - tipo: END_ROD
+      forma: RING
+      cantidad: 30
+      radio: 1.8
+      altura: 0.2
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5098
+  esp_runas_pulso:
+    nombre: Pulso de Runas
+    categoria: OTROS
+    slot: SPECIAL
+    rareza: EPIC
+    tier: PREMIUM
+    desc: Un pulso de runas cada pocos segundos.
+    color: '#c77dff'
+    particulas:
+    - tipo: ENCHANT
+      forma: RING
+      cantidad: 30
+      radio: 1.6
+      altura: 0.2
+      velocidad: 0.0
+      tamano: 1.0
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5099
+  esp_aurora:
+    nombre: Aurora Boreal
+    categoria: OTROS
+    slot: SPECIAL
+    rareza: MYTHIC
+    tier: PREMIUM
+    desc: Una cortina de aurora sobre ti.
+    color: '#7dffd0'
+    particulas:
+    - tipo: DUST_COLOR_TRANSITION
+      forma: RAIN
+      cantidad: 8
+      radio: 1.2
+      altura: 3.0
+      velocidad: 0.0
+      tamano: 1.5
+      color: '#7dffd0'
+      color2: '#9b5cff'
+    offset:
+    - 0
+    - 0
+    - 0
+    yaw: 0
+    scale: 1.0
+    sigue: head
+    cmd: 5100
+key_cmd:
+  madera: 3001
+  hierro: 3002
+  dorado: 3003
+  magico: 3004
+  legendario: 3005
+  oscuro: 3006
+  evento: 3007
