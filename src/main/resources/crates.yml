@@ -1,0 +1,313 @@
+# Crates. Edita aqui o desde /aeadmin menu. weight = peso relativo (probabilidad = weight / suma).
+crates:
+  madera:
+    name: §6Cofre de Madera
+    rarity: COMMON
+    model: crate_madera
+    scale: 1.0
+    fallback-block: BARREL
+    key:
+      name: Llave de Madera
+      cmd: 3001
+      material: AMETHYST_SHARD
+    rewards:
+      r0:
+        weight: 60
+        rarity: COMMON
+        reward:
+          type: CORONA
+          amount: 5
+      r1:
+        weight: 25
+        rarity: COMMON
+        reward:
+          type: CORONA
+          amount: 15
+      r2:
+        weight: 10
+        rarity: RARE
+        reward:
+          type: KEY
+          crate: hierro
+          amount: 1
+      r3:
+        weight: 4
+        rarity: RARE
+        reward:
+          type: COSMETIC
+          cosmetic: pet_cuervo_runas
+          amount: 1
+      r4:
+        weight: 1
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: cape_encantada_runas
+          amount: 1
+  hierro:
+    name: §fCofre de Hierro
+    rarity: RARE
+    model: crate_hierro
+    scale: 1.0
+    fallback-block: IRON_BLOCK
+    key:
+      name: Llave de Hierro
+      cmd: 3002
+      material: AMETHYST_SHARD
+    rewards:
+      r0:
+        weight: 50
+        rarity: COMMON
+        reward:
+          type: CORONA
+          amount: 20
+      r1:
+        weight: 25
+        rarity: RARE
+        reward:
+          type: CORONA
+          amount: 50
+      r2:
+        weight: 12
+        rarity: RARE
+        reward:
+          type: KEY
+          crate: dorado
+          amount: 1
+      r3:
+        weight: 10
+        rarity: RARE
+        reward:
+          type: COSMETIC
+          cosmetic: hat_corona_oro
+          amount: 1
+      r4:
+        weight: 3
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: pet_zorro_sombrio
+          amount: 1
+  dorado:
+    name: §eCofre Dorado
+    rarity: EPIC
+    model: crate_dorado
+    scale: 1.0
+    fallback-block: GOLD_BLOCK
+    key:
+      name: Llave Dorada
+      cmd: 3003
+      material: AMETHYST_SHARD
+    rewards:
+      r0:
+        weight: 45
+        rarity: RARE
+        reward:
+          type: CORONA
+          amount: 50
+      r1:
+        weight: 25
+        rarity: EPIC
+        reward:
+          type: CORONA
+          amount: 120
+      r2:
+        weight: 12
+        rarity: EPIC
+        reward:
+          type: KEY
+          crate: magico
+          amount: 1
+      r3:
+        weight: 12
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: fx_walk_fuego
+          amount: 1
+      r4:
+        weight: 6
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: cape_encantada_fuego
+          amount: 1
+  magico:
+    name: §5Cofre Mágico
+    rarity: EPIC
+    model: crate_magico
+    scale: 1.0
+    fallback-block: AMETHYST_BLOCK
+    key:
+      name: Llave Mágica
+      cmd: 3004
+      material: AMETHYST_SHARD
+    rewards:
+      r0:
+        weight: 40
+        rarity: EPIC
+        reward:
+          type: CORONA
+          amount: 150
+      r1:
+        weight: 25
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: fx_jump_alas
+          amount: 1
+      r2:
+        weight: 15
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: cape_encantada_runas
+          amount: 1
+      r3:
+        weight: 12
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: aura_halo
+          amount: 1
+      r4:
+        weight: 8
+        rarity: LEGENDARY
+        reward:
+          type: KEY
+          crate: legendario
+          amount: 1
+  legendario:
+    name: §6§lCofre Legendario
+    rarity: LEGENDARY
+    model: crate_legendario
+    scale: 1.0
+    fallback-block: BEACON
+    key:
+      name: Llave Legendaria
+      cmd: 3005
+      material: AMETHYST_SHARD
+    rewards:
+      r0:
+        weight: 40
+        rarity: EPIC
+        reward:
+          type: CORONA
+          amount: 300
+      r1:
+        weight: 30
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: ring_eterno
+          amount: 1
+      r2:
+        weight: 15
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: aura_infierno
+          amount: 1
+      r3:
+        weight: 10
+        rarity: MYTHIC
+        reward:
+          type: COSMETIC
+          cosmetic: wing_dragon_oro
+          amount: 1
+      r4:
+        weight: 5
+        rarity: MYTHIC
+        reward:
+          type: CORONA
+          amount: 1000
+  oscuro:
+    name: §8Cofre Oscuro
+    rarity: LEGENDARY
+    model: crate_oscuro
+    scale: 1.0
+    fallback-block: OBSIDIAN
+    key:
+      name: Llave Oscura
+      cmd: 3006
+      material: AMETHYST_SHARD
+    rewards:
+      r0:
+        weight: 35
+        rarity: EPIC
+        reward:
+          type: CORONA
+          amount: 200
+      r1:
+        weight: 25
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: hat_mascara_sombra
+          amount: 1
+      r2:
+        weight: 20
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: wing_abismo
+          amount: 1
+      r3:
+        weight: 12
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: aura_vacio
+          amount: 1
+      r4:
+        weight: 8
+        rarity: MYTHIC
+        reward:
+          type: COSMETIC
+          cosmetic: wing_infernal
+          amount: 1
+  evento:
+    name: §cCofre de Evento
+    rarity: EPIC
+    model: crate_evento
+    scale: 1.0
+    fallback-block: RED_SHULKER_BOX
+    key:
+      name: Llave de Evento
+      cmd: 3007
+      material: AMETHYST_SHARD
+    rewards:
+      r0:
+        weight: 50
+        rarity: RARE
+        reward:
+          type: CORONA
+          amount: 60
+      r1:
+        weight: 20
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: aura_nevada
+          amount: 1
+      r2:
+        weight: 15
+        rarity: EPIC
+        reward:
+          type: COSMETIC
+          cosmetic: hat_mago_invierno
+          amount: 1
+      r3:
+        weight: 10
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: pet_zorro_reno
+          amount: 1
+      r4:
+        weight: 5
+        rarity: LEGENDARY
+        reward:
+          type: COSMETIC
+          cosmetic: hat_corona_hielo
+          amount: 1
