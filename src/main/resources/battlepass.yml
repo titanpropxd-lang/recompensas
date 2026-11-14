@@ -45,7 +45,7 @@ levels:
       amount: 1
     premium:
       type: COSMETIC
-      cosmetic: fx_kill_rayo
+      cosmetic: hat_corona_amatista
       amount: 1
   '6':
     free:
@@ -80,11 +80,11 @@ levels:
   '10':
     free:
       type: COSMETIC
-      cosmetic: fx_land_impacto
+      cosmetic: aura_pulso
       amount: 1
     premium:
       type: COSMETIC
-      cosmetic: cape_encantada_runas
+      cosmetic: pet_dragon_escarcha
       amount: 1
   '11':
     free:
@@ -122,7 +122,7 @@ levels:
       amount: 1
     premium:
       type: COSMETIC
-      cosmetic: wing_angelical
+      cosmetic: aura_halo
       amount: 1
   '16':
     free:
@@ -155,12 +155,12 @@ levels:
       amount: 135
   '20':
     free:
-      type: KEY
-      crate: madera
+      type: COSMETIC
+      cosmetic: pet_cuervo_runas
       amount: 1
     premium:
       type: COSMETIC
-      cosmetic: ring_oro
+      cosmetic: wing_serafin
       amount: 1
   '21':
     free:
@@ -199,7 +199,7 @@ levels:
       amount: 1
     premium:
       type: COSMETIC
-      cosmetic: aura_halo
+      cosmetic: pet_dragon_amatista
       amount: 1
   '26':
     free:
@@ -232,8 +232,8 @@ levels:
       amount: 185
   '30':
     free:
-      type: KEY
-      crate: madera
+      type: COSMETIC
+      cosmetic: wing_dragon_verde
       amount: 1
     premium:
       type: COSMETIC

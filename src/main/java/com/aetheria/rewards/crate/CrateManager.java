@@ -36,7 +36,10 @@ public class CrateManager {
         loadPlacements();
         // los modelos colocados necesitan espectadores: se actualizan cada segundo (solo cofres, no jugadores)
         Bukkit.getScheduler().runTaskTimer(plugin, () -> {
-            for (Placement p : placements.values()) if (p.handle != null && !p.handle.isClosed()) p.handle.refreshViewers(48);
+            for (Placement p : placements.values()) {
+                if (p.handle != null && !p.handle.isClosed()) p.handle.refreshViewers(48);
+                ambient(p);
+            }
         }, 60L, 20L);
     }
 
@@ -205,6 +208,23 @@ public class CrateManager {
     }
 
     private static boolean isLoaded(Location l) { return l.getWorld().isChunkLoaded(l.getBlockX() >> 4, l.getBlockZ() >> 4); }
+
+    /** Particulas ambientales segun rareza (solo cofres de llave; los ocultos tienen su propio destello). */
+    private void ambient(Placement p) {
+        if (p.type != Placement.Type.CRATE) return;
+        Crate c = crates.get(p.crateId);
+        Location l = p.location();
+        if (c == null || l == null || !isLoaded(l)) return;
+        Particle part; int n;
+        switch (c.rarity) {
+            case COMMON -> { part = Particle.END_ROD; n = 1; }
+            case RARE -> { part = Particle.ENCHANT; n = 6; }
+            case EPIC -> { part = Particle.WITCH; n = 5; }
+            case LEGENDARY -> { part = Particle.TOTEM_OF_UNDYING; n = 3; }
+            default -> { part = Particle.PORTAL; n = 12; }
+        }
+        l.getWorld().spawnParticle(part, l.clone().add(0, 1.0, 0), n, 0.45, 0.45, 0.45, 0.02);
+    }
 
     public void despawnVisual(Placement p) {
         if (p.handle != null) { p.handle.close(); p.handle = null; }

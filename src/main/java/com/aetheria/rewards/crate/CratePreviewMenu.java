@@ -37,6 +37,12 @@ public class CratePreviewMenu extends Menu {
             set(SLOTS[i], ic);
         }
         int pages = Math.max(1, (list.size() + SLOTS.length - 1) / SLOTS.length);
+        java.util.EnumMap<com.aetheria.rewards.util.Rarity, Double> byRar = new java.util.EnumMap<>(com.aetheria.rewards.util.Rarity.class);
+        for (Crate.Entry en : crate.rewards) byRar.merge(en.rarity, crate.chance(en), Double::sum);
+        java.util.List<String> rl = new java.util.ArrayList<>();
+        rl.add("§7Reparto de probabilidades:");
+        for (var r : com.aetheria.rewards.util.Rarity.values()) if (byRar.containsKey(r)) rl.add(r.color + r.label + " §8» §f" + String.format("%.1f", byRar.get(r)) + "%");
+        set(47, Util.glow(Util.item(Material.AMETHYST_CLUSTER, "§6§lProbabilidad por rareza", rl.toArray(new String[0]))), null);
         if (page > 0) set(45, ui(9003, Material.ARROW, "§e« Anterior"), e -> { page--; refresh(); });
         else if (onBack != null) back(45, onBack); 
         set(49, Util.item(Material.BOOK, "§6" + crate.name.replaceAll("§.", ""), "§7Recompensas: §f" + crate.rewards.size(), "§7Página " + (page + 1) + "/" + pages), null);

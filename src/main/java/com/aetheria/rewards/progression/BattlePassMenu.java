@@ -50,6 +50,14 @@ public class BattlePassMenu extends Menu {
             track(18 - 9 + col + 0, level, false, d, reached, prem);
             track(27 + col, level, true, d, reached, prem);
         }
+        // barra de progreso del nivel actual (7 segmentos)
+        double frac = lv >= bp.maxLevel ? 1.0 : (double) into / Math.max(1, need);
+        int filled = (int) Math.round(frac * 7);
+        for (int i = 0; i < 7; i++) {
+            boolean on = i < filled;
+            set(37 + i, Util.item(on ? Material.MAGENTA_STAINED_GLASS_PANE : Material.GRAY_STAINED_GLASS_PANE, on ? "§d▰ Progreso" : "§8▱ Progreso",
+                    "§7XP: §b" + into + "§7/§b" + (lv >= bp.maxLevel ? "—" : String.valueOf(need))), null);
+        }
         // fila inferior
         if (page > 0) set(45, ui(9003, Material.ARROW, "§e« Niveles anteriores"), e -> { page--; refresh(); });
         else back(45, () -> new com.aetheria.rewards.gui.MainMenu(plugin, player).open());

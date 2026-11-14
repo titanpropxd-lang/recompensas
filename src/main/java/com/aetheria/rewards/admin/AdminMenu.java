@@ -19,6 +19,7 @@ public class AdminMenu extends Menu {
         set(23, Util.item(Material.SPRUCE_SAPLING, "§a§lAdviento", "§724 casillas."), e -> new TrackAdminMenu(plugin, player, "ADVIENTO").open());
         set(24, Util.item(Material.PINK_TULIP, "§d§lEvento de Febrero", "§7Tramos de recompensas."), e -> new TrackAdminMenu(plugin, player, "FEBRERO").open());
         set(25, Util.item(Material.COMPASS, "§e§lPosiciones", "§7Cofres colocados en el mundo."), e -> new PlacementsAdminMenu(plugin, player).open());
+        set(30, Util.item(Material.ENDER_EYE, "§5§lCofres Ocultos", "§7Cofres de exploración: cada uno", "§7con sus propias recompensas."), e -> new PlacementsAdminMenu(plugin, player, true).open());
         set(31, Util.item(Material.REPEATING_COMMAND_BLOCK, "§a§lRecargar configuración", "§7Relee YAML sin reiniciar."), e -> { plugin.reloadAll(); player.sendMessage(Util.c(Util.PREFIX + "§aConfiguración recargada.")); });
         close(40);
     }
