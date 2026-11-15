@@ -70,7 +70,7 @@ public abstract class Menu implements InventoryHolder {
     /** Boton con icono ornamental del resource pack (CMD) si 'gui-skin' esta activo; si no, el item vanilla. */
     protected ItemStack ui(int cmd, Material fallback, String name, String... lore) {
         if (!plugin.skin()) return Util.item(fallback, name, lore);
-        return Util.item(Material.PAPER, cmd, name, java.util.List.of(lore));
+        return Util.item(Util.UI_ITEM, cmd, name, java.util.List.of(lore));
     }
     protected void back(int slot, Runnable r) {
         set(slot, ui(9001, Material.ARROW, "§e« Volver"), e -> r.run());

@@ -8,6 +8,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.joml.Vector3f;
+import java.util.function.Supplier;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
@@ -46,6 +49,12 @@ public class CosmeticManager {
     private final Map<String, Long> cooldown = new HashMap<>();
     private long tick = 0;
     private double hatYOffset = 0.0;
+    private boolean hatFollowHead = true;
+    private final Map<UUID, double[]> motion = new HashMap<>();
+    private final Map<UUID, String> motionState = new HashMap<>();
+    private final Map<UUID, Integer> motionCount = new HashMap<>();
+    private final Map<UUID, org.bukkit.scheduler.BukkitTask> parades = new HashMap<>();
+    private double modelUnit = 1.0;     // multiplicador de unidades de BetterModel (1.0 = bloques)
     private final NamespacedKey voucherKey;
 
     public CosmeticManager(AetheriaRewards plugin) {
@@ -62,6 +71,8 @@ public class CosmeticManager {
 
     public void load() {
         hatYOffset = plugin.getConfig().getDouble("hat-y-offset", 0.0);
+        modelUnit = plugin.getConfig().getDouble("model-unit-scale", 1.0);
+        hatFollowHead = plugin.getConfig().getBoolean("hat-follow-head", true);
         defs.clear();
         File f = catalogFile();
         if (!f.exists()) plugin.saveResource("catalog.yml", false);
@@ -128,15 +139,14 @@ public class CosmeticManager {
             }
             lore.add("§b👁 Shift+clic: previsualizar " + PREVIEW_SECONDS + "s");
         }
-        ItemStack it = Util.item(Material.PAPER, def.cmd, def.rarity.color + "§l" + def.name, lore);
+        ItemStack it = Util.item(Util.UI_ITEM, def.cmd, def.rarity.color + "§l" + def.name, lore);
         if (d != null && def.id.equals(d.equipped.get(def.slot))) Util.glow(it);
-        if (d != null && !own) { it.setType(Material.PAPER); }
-        return it;
+                return it;
     }
 
     /** Hoja de cosmetico: item con el icono del cosmetico; clic derecho para desbloquearlo. */
     public ItemStack voucher(CosmeticDef d, int amount) {
-        ItemStack it = Util.item(Material.PAPER, d.cmd, d.rarity.color + "§lCosmético: §f" + d.name,
+        ItemStack it = Util.item(Util.UI_ITEM, d.cmd, d.rarity.color + "§lCosmético: §f" + d.name,
             List.of(d.rarity.tag() + " §8• §7" + d.category.label, "", "§7" + d.desc, "", "§e▶ Clic derecho para desbloquear"));
         ItemMeta m = it.getItemMeta();
         m.getPersistentDataContainer().set(voucherKey, PersistentDataType.STRING, d.id);
@@ -160,6 +170,7 @@ public class CosmeticManager {
         plugin.data().markDirty(d);
         refreshActive(p);
         p.playSound(p.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME, 1f, 1.4f);
+        p.getWorld().spawnParticle(Particle.ENCHANT, p.getLocation().add(0, 1.2, 0), 24, 0.4, 0.6, 0.4, 0.6);
         return true;
     }
 
@@ -205,6 +216,7 @@ public class CosmeticManager {
 
     public void onQuit(Player p) {
         UUID id = p.getUniqueId();
+        stopParade(id); motion.remove(id); motionState.remove(id); motionCount.remove(id);
         active.remove(id); previews.remove(id); previewEnd.remove(id); lastPos.remove(id); bodyYaw.remove(id); maxFall.remove(id);
         pets.forget(id);
         clearAllVisuals(id);
@@ -288,6 +300,7 @@ public class CosmeticManager {
             boolean modelsOff = p.isGliding() || p.isSwimming() || p.isSleeping() || p.isRiptiding();
             if (modelsOff) clearAllVisuals(id);
             Location loc = p.getLocation();
+            updateMotion(p, id, loc);
             double yawRad = Math.toRadians(loc.getYaw());
 
             // yaw corporal suavizado (alas/capas)
@@ -318,9 +331,7 @@ public class CosmeticManager {
                             lp[0] = loc.getX(); lp[1] = loc.getZ();
                         }
                     }
-                    case "HAT" -> { if (!modelsOff) attach(p, d, slot, def, headLoc(p, def, yawRad), "idle"); }
-                    case "BACK" -> { if (!modelsOff) attach(p, d, slot, def, relLoc(loc, def, bodyRad, sneakDrop(p)), "idle"); }
-                    case "RING", "ORBIT" -> { if (!modelsOff) attach(p, d, slot, def, relLoc(loc, def, 0, 0), "idle"); }
+                    case "HAT", "BACK", "RING", "ORBIT" -> { if (!modelsOff) attachWorn(p, d, slot, def); }
                     case "PET" -> { petLoc = pets.follow(p, def, tick); if (!modelsOff) attach(p, d, slot, def, petLoc, "idle"); }
                     default -> {}
                 }
@@ -357,6 +368,83 @@ public class CosmeticManager {
                 base.getZ() + rz * def.ox - fz * def.oz, (float) (Math.toDegrees(yawRad) + def.yaw), 0f);
     }
 
+    /** Modelos "puestos" (sombrero, alas/capa, anillo, orbitales): enganchados al jugador, se mueven con el sin retraso. */
+    private void attachWorn(Player p, PlayerData d, String slot, CosmeticDef def) {
+        if (!def.hasModel() || !plugin.models().available()) return;
+        Map<String, ModelHandle> m = handles.computeIfAbsent(p.getUniqueId(), k -> new HashMap<>());
+        ModelHandle h = m.get(slot);
+        UUID exclude = d.hideOwn ? p.getUniqueId() : null;
+        if (h == null || h.isClosed()) {
+            if (tick % 20 != 0 && h == null && !plugin.models().loaded(def.model)) return;
+            final double ox = def.ox, oy = def.oy, oz = def.oz;
+            final boolean hat = slot.equals("HAT");
+            Supplier<Vector3f> off = () -> {
+                double y = hat ? p.getEyeHeight() + 0.18 + hatYOffset + oy : oy + sneakDrop(p);   // sigue el agachado
+                return new Vector3f((float) (ox * modelUnit), (float) (y * modelUnit), (float) (oz * modelUnit));
+            };
+            h = plugin.models().attach(def.model, p, (float) def.scale, off, hat && hatFollowHead);
+            if (h == null) return;
+            h.animate("idle", ModelHandle.Mode.LOOP);
+            h.state(animFor(slot, motionState.getOrDefault(p.getUniqueId(), "idle")));
+            h.refreshViewers(48, exclude);
+            m.put(slot, h);
+        } else if (tick % 10 == 0) h.refreshViewers(48, exclude);
+    }
+
+    // ------------------------------------------------------------------ animacion por estado de movimiento
+    private void updateMotion(Player p, UUID id, Location loc) {
+        double[] m = motion.computeIfAbsent(id, k -> new double[]{loc.getX(), loc.getY(), loc.getZ()});
+        double dxz = Math.hypot(loc.getX() - m[0], loc.getZ() - m[2]), dy = loc.getY() - m[1];
+        m[0] = loc.getX(); m[1] = loc.getY(); m[2] = loc.getZ();
+        boolean ground = p.isOnGround();
+        String cand;
+        if (dxz > 6) cand = "idle";                                       // teletransporte
+        else if (!ground && dy < -0.08) cand = "fall";
+        else if (dxz > 0.03 || (!ground && dy > 0.05)) cand = "move";
+        else cand = "idle";
+        String cur = motionState.getOrDefault(id, "idle");
+        if (cand.equals(cur)) { motionCount.put(id, 0); return; }
+        if (motionCount.merge(id, 1, Integer::sum) >= 3) {                 // histeresis: 3 ticks seguidos
+            motionState.put(id, cand); motionCount.put(id, 0);
+            Map<String, ModelHandle> hs = handles.get(id);
+            if (hs != null) for (Map.Entry<String, ModelHandle> e : hs.entrySet()) e.getValue().state(animFor(e.getKey(), cand));
+        }
+    }
+    private String animFor(String slot, String st) {
+        return switch (slot) { case "PET" -> st.equals("move") ? "walk" : "idle"; case "HAT" -> "idle"; default -> st; };
+    }
+
+    // ------------------------------------------------------------------ desfile de revision (QA)
+    /** Muestra todos los cosmeticos con modelo (opcionalmente solo de un tipo) de uno en uno sobre el admin. */
+    public int startParade(Player p, String slotFilter) {
+        stopParade(p.getUniqueId());
+        List<CosmeticDef> list = new ArrayList<>();
+        for (CosmeticDef d : defs.values()) if (d.hasModel() && (slotFilter == null || d.slot.equals(slotFilter))) list.add(d);
+        if (list.isEmpty()) return 0;
+        final UUID id = p.getUniqueId();
+        final int[] idx = {0};
+        parades.put(id, Bukkit.getScheduler().runTaskTimer(plugin, () -> {
+            if (!p.isOnline() || idx[0] >= list.size()) { stopParade(id); if (p.isOnline()) p.sendMessage(Util.c(Util.PREFIX + "§aDesfile terminado.")); return; }
+            previews.remove(id); previewEnd.remove(id); clearAllVisuals(id);
+            CosmeticDef d = list.get(idx[0]++);
+            preview(p, d);
+            p.sendActionBar(Util.c("§8[" + idx[0] + "/" + list.size() + "] §f" + d.id + " §7- " + d.rarity.color + d.name + " §8(" + d.slot + ")"));
+            p.sendMessage(Util.c("§8[" + idx[0] + "/" + list.size() + "] §7" + d.id + " §8(" + d.slot + ")"));
+        }, 0L, 80L));
+        return list.size();
+    }
+    public void stopParade(UUID id) {
+        org.bukkit.scheduler.BukkitTask t = parades.remove(id);
+        if (t != null) t.cancel();
+    }
+    public void stopParade(Player p) {
+        stopParade(p.getUniqueId());
+        previews.remove(p.getUniqueId()); previewEnd.remove(p.getUniqueId()); clearAllVisuals(p.getUniqueId()); refreshActive(p);
+    }
+
+    /** Fuerza recrear los modelos (cambio de mundo, etc.). */
+    public void resetVisuals(Player p) { clearAllVisuals(p.getUniqueId()); }
+
     private void attach(Player p, PlayerData d, String slot, CosmeticDef def, Location at, String anim) {
         if (!def.hasModel() || !plugin.models().available()) return;
         Map<String, ModelHandle> m = handles.computeIfAbsent(p.getUniqueId(), k -> new HashMap<>());
@@ -367,6 +455,7 @@ public class CosmeticManager {
             h = plugin.models().spawn(def.model, at, (float) def.scale);
             if (h == null) return;
             h.animate(anim, ModelHandle.Mode.LOOP);
+            h.state(animFor(slot, motionState.getOrDefault(p.getUniqueId(), "idle")));
             h.refreshViewers(48, exclude);
             m.put(slot, h);
         } else { h.move(at); if (tick % 10 == 0) h.refreshViewers(48, exclude); }

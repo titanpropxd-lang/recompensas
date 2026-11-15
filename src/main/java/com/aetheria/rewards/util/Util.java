@@ -12,6 +12,8 @@ import java.util.List;
 
 public final class Util {
     private Util() {}
+    /** Item base de todos los modelos del resource pack (iconos, botones, fondos, hojas). Distinto de paper para no chocar con otros packs. */
+    public static final Material UI_ITEM = Material.HEART_OF_THE_SEA;
     public static final String PREFIX = "§5§l✦ §6§lAetheria §8» §7";
     public static final LegacyComponentSerializer LEGACY = LegacyComponentSerializer.legacySection();
 
@@ -43,7 +45,7 @@ public final class Util {
     }
     /** Relleno invisible (modelo transparente del resource pack) para GUIs con skin. */
     public static ItemStack blank() {
-        ItemStack it = new ItemStack(Material.PAPER);
+        ItemStack it = new ItemStack(UI_ITEM);
         ItemMeta m = it.getItemMeta();
         m.displayName(Component.empty());
         m.setCustomModelData(9000);
