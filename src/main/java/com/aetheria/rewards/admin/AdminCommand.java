@@ -63,6 +63,12 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
                 plugin.audit().tail(s, a[1], a.length > 2 ? Math.min(50, Math.max(1, parse(a[2], 15))) : 15);
             }
             case "debug" -> debug(s);
+            case "parade" -> {
+                if (!(s instanceof Player p)) { msg(s, "Solo jugadores."); return true; }
+                if (a.length > 1 && a[1].equalsIgnoreCase("stop")) { plugin.cosmetics().stopParade(p); msg(s, "Desfile detenido."); return true; }
+                int n = plugin.cosmetics().startParade(p, a.length > 1 ? a[1].toUpperCase() : null);
+                msg(s, n == 0 ? "§cNo hay cosméticos con modelo para ese filtro." : "Desfile de §f" + n + " §7cosméticos, uno cada 4 s. Detener: §e/aeadmin parade stop");
+            }
             case "testmodel" -> {
                 if (!(s instanceof Player p) || a.length < 2) { msg(s, "Uso (como jugador): /aeadmin testmodel <modelo>"); return true; }
                 var h = plugin.models().spawn(a[1], p.getLocation().add(p.getLocation().getDirection().multiply(2)), 1f);
@@ -83,7 +89,7 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
             case "help" -> {
                 for (String l : new String[]{"menu", "givekey <jugador> <crate> [n]", "givecosmetic <jugador> <id> [n]", "givecoin <jugador> <n>", "unlock <jugador> <cosmético|all>",
                     "lock <jugador> <cosmético>", "xp <jugador> <n>", "victory <jugador>", "place <crate>", "hidden <crate>", "remove <id>", "rotate <id> <yaw>",
-                    "list", "reset <jugador> <advent|pase|misiones|febrero>", "log <jugador> [n]", "debug", "testmodel <modelo>", "hatoffset <valor>", "reload"}) s.sendMessage(Util.c("§6/aeadmin §f" + l));
+                    "list", "reset <jugador> <advent|pase|misiones|febrero>", "log <jugador> [n]", "debug", "parade [HAT|BACK|PET|RING|ORBIT|stop]", "testmodel <modelo>", "hatoffset <valor>", "reload"}) s.sendMessage(Util.c("§6/aeadmin §f" + l));
             }
             case "reload" -> { plugin.reloadAll(); msg(s, "§aRecargado."); }
             case "list" -> {
@@ -188,12 +194,13 @@ public class AdminCommand implements CommandExecutor, TabCompleter {
         if (c.getName().equalsIgnoreCase("cosmeticos") && a.length == 1) out.add("probar"); if (c.getName().equalsIgnoreCase("cosmeticos") && a.length == 1) out.add("ocultar");
         if (c.getName().equalsIgnoreCase("cosmeticos") && a.length == 2) plugin.cosmetics().all().forEach(d -> out.add(d.id));
         if (!c.getName().equalsIgnoreCase("aeadmin") || !s.hasPermission("rewards.admin")) return filter(out, a);
-        if (a.length == 1) out.addAll(List.of("menu", "help", "log", "debug", "testmodel", "hatoffset", "givekey", "givecosmetic", "givecoin", "unlock", "lock", "xp", "victory", "place", "hidden", "remove", "rotate", "list", "reset", "reload"));
+        if (a.length == 1) out.addAll(List.of("menu", "help", "log", "debug", "parade", "testmodel", "hatoffset", "givekey", "givecosmetic", "givecoin", "unlock", "lock", "xp", "victory", "place", "hidden", "remove", "rotate", "list", "reset", "reload"));
         else if (a.length == 2) {
             switch (a[0].toLowerCase()) {
                 case "log", "givekey", "givecosmetic", "givecoin", "unlock", "lock", "xp", "victory", "reset" -> Bukkit.getOnlinePlayers().forEach(p -> out.add(p.getName()));
                 case "place", "hidden" -> plugin.crates().all().forEach(x -> out.add(x.id));
                 case "testmodel" -> out.addAll(plugin.models().modelNames());
+                case "parade" -> out.addAll(List.of("HAT", "BACK", "PET", "RING", "ORBIT", "stop"));
                 case "remove", "rotate" -> plugin.crates().placements().forEach(x -> out.add(x.id));
             }
         } else if (a.length == 3) {

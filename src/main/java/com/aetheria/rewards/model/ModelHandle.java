@@ -9,6 +9,8 @@ public interface ModelHandle {
     void animate(String animation, Mode mode);
     /** Muestra el modelo a los jugadores cercanos y lo oculta a los lejanos (DummyTracker no tiene espectadores automaticos). */
     void refreshViewers(double radius, java.util.UUID exclude);
+    /** Cambia la animacion de estado (idle / move / fall / walk) si el modelo la tiene; si no, mantiene la actual. */
+    void state(String animation);
     void close();
     boolean isClosed();
 }

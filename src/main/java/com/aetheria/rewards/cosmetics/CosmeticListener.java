@@ -42,7 +42,7 @@ public class CosmeticListener implements Listener {
     }
 
     @EventHandler
-    public void onWorld(PlayerChangedWorldEvent e) { plugin.cosmetics().refreshActive(e.getPlayer()); }
+    public void onWorld(PlayerChangedWorldEvent e) { plugin.cosmetics().resetVisuals(e.getPlayer()); plugin.cosmetics().refreshActive(e.getPlayer()); }
 
     /** Clic derecho con una hoja de cosmetico: se consume UNA y se desbloquea (si ya lo tiene, no se gasta). */
     @EventHandler

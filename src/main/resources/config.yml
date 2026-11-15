@@ -27,3 +27,9 @@ storage:
     database: aetheria
     user: root
     password: ""
+
+# Multiplicador de unidades de los modelos enganchados al jugador (1.0 = bloques). Si sombreros/alas aparecen enormemente lejos o pegados al suelo, prueba 16 o 0.0625.
+model-unit-scale: 1.0
+
+# Los sombreros/mascaras giran con la CABEZA del jugador (true) o con el cuerpo (false). Si al girar la cabeza giran al reves, pon false.
+hat-follow-head: true

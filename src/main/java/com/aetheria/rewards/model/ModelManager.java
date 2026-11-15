@@ -20,7 +20,12 @@ import java.util.List;
  * Si BetterModel no esta, spawn() devuelve null y los sistemas usan su respaldo (particulas / BlockDisplay).
  */
 public class ModelManager {
-    public interface Backend { boolean has(String model); ModelHandle spawn(String model, Location loc, float scale); }
+    public interface Backend {
+        boolean has(String model);
+        ModelHandle spawn(String model, Location loc, float scale);
+        /** Modelo enganchado a un jugador: se mueve con el en el mismo tick (sin retraso). offset en bloques, en ejes del modelo (x derecha, y arriba, z detras). */
+        ModelHandle attach(String model, org.bukkit.entity.Player player, float scale, java.util.function.Supplier<Vector3f> offset, boolean followHead);
+    }
 
     private final AetheriaRewards plugin;
     private Backend backend;
@@ -58,6 +63,12 @@ public class ModelManager {
         if (backend == null) return null;
         try { return backend.spawn(model, loc, scale); }
         catch (Throwable t) { plugin.getLogger().warning("Error creando modelo " + model + ": " + t); return null; }
+    }
+
+    public ModelHandle attach(String model, org.bukkit.entity.Player p, float scale, java.util.function.Supplier<Vector3f> offset, boolean followHead) {
+        if (backend == null) return null;
+        try { return backend.attach(model, p, scale, offset, followHead); }
+        catch (Throwable t) { plugin.getLogger().warning("Error enganchando modelo " + model + " a " + p.getName() + ": " + t); return null; }
     }
 
     /** Copia los .bbmodel incluidos a plugins/BetterModel/models (sin sobrescribir los existentes). */
